@@ -1,0 +1,18 @@
+### Maintained since 2016
+
+## Basic Alias - shell related
+alias c='clear'
+alias l='ls -lFG'
+alias ll='ls -lFG'
+alias la='ls -laFG'
+alias ls='ls -FG'
+alias vi='vim'
+
+
+
+## Custom Alias
+# Check all the files modified within last week / last 2 weeks
+alias chlw='find . -mtime -1w -type file -exec ls -lh {} \;'
+alias chl2w='find . -mtime -2w -type file -exec ls -lh {} \;'
+# Delete all .DS_Store files under the current folder structure
+alias rmds='find . -name ".DS_Store" -type file -exec rm -v {} \;'

@@ -1,0 +1,28 @@
+[core]
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  editor = vim
+[user]
+  name = Ryota
+  useConfigOnly = true
+[github]
+  user = rytswd
+[color]
+  branch = true
+  ui = true
+  diff = true
+  status = true
+[alias]
+  s = status
+  ci = commit
+  co = checkout
+  ls = branch -a
+  lga = log --oneline --all --decorate --graph
+[help]
+  autocorrect = 1
+[push]
+  default = simple
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
