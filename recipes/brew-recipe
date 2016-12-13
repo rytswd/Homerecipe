@@ -1,18 +1,47 @@
-homebrew/dupes/apple-gcc42
-automake
-cask
-emacs
-ghc
-git
-heroku
-heroku
-httpie
-leiningen
-node
-ossp-uuid
-postgresql
-python3
-rbenv
-wakeonlan
-wireshark
-zsh
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/dupes'
+brew 'autoconf'
+brew 'automake'
+brew 'c-ares'
+brew 'emacs', args: ['with-cocoa']
+brew 'cask'
+brew 'dbus'
+brew 'gdbm'
+brew 'geoip'
+brew 'gettext'
+brew 'ghc'
+brew 'git'
+brew 'libffi'
+brew 'pcre'
+brew 'glib'
+brew 'gmp'
+brew 'libtasn1'
+brew 'nettle'
+brew 'gnutls'
+brew 'heroku'
+brew 'openssl'
+brew 'readline'
+brew 'sqlite'
+brew 'xz'
+brew 'python3'
+brew 'httpie'
+brew 'hub'
+brew 'leiningen'
+brew 'libgpg-error'
+brew 'libgcrypt'
+brew 'makedepend'
+brew 'node'
+brew 'ossp-uuid'
+brew 'pkg-config'
+brew 'postgresql'
+brew 'ruby-build'
+brew 'rbenv'
+brew 'speedtest_cli'
+brew 'tree'
+brew 'wakeonlan'
+brew 'wireshark'
+brew 'zsh'
+brew 'homebrew/dupes/apple-gcc42'
+cask 'haskell-platform'
