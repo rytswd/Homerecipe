@@ -28,6 +28,8 @@ else
     echo "Operation completed"
     echo ""
 fi
+
+## Clean up log file
 rm /tmp/dotfiles_setup.log
 
 exit $__error_code
