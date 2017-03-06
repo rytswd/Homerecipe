@@ -4,7 +4,7 @@ generator-bare-react
 generator-chrome-extension
 gulp
 learnyounode
-node-inspector
+node
 nodemon
 npm
 react

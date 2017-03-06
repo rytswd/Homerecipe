@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+set +o posix
+
+###====: HOMERECIPE :============================================
+###      Recipe to cook my $HOME
+###==============================================================
+
+#------: Main Logic :--------------------------------------------
+# The logic is really simple - this "cook" executable
+#   will kick off shell scripts under scripts/ directory.
+#
+# All the main business logic is under each script.
+#------: Special Thanks :----------------------------------------
+# Some of the base logic for this "cook" came from
+#   the ideas of Homebrew https://github.com/Homebrew/brew
+#----------------------------------------------------------------
+
+quiet_cd() {
+  cd "$@" >/dev/null || echo "Error: cd failed, could not locate the dir"
+}
+export HOMERECIPE_DIR
+HOMERECIPE_DIR="$(quiet_cd "${0%/*}" && pwd -P)"
+export HOMERECIPE_FILE="${HOMERECIPE_DIR%/}/${0##*/}"
+export HOMERECIPE_SCRIPTS="${HOMERECIPE_DIR%/}/scripts/"
+export HOMERECIPE_PREFIX="${HOMERECIPE_FILE%/*/*}"
+
+COOKWARE="$1"
+shift
+case "$COOKWARE" in
+  h)          COOKWARE="prompt_help" ;;
+  -h)         COOKWARE="prompt_help" ;;
+  --h)        COOKWARE="prompt_help" ;;
+  help)       COOKWARE="prompt_help" ;;
+  debug)      COOKWARE="debug" ;;
+  recipes)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
+  prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
+  dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
+  all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
+
+  custom)     COOKWARE="${HOMERECIPE_DIR}/misc/run-custom.sh"
+esac
+
+debug() {
+  echo "Debug information"
+  echo
+  echo "HOMERECIPE_DIR : $HOMERECIPE_DIR"
+  echo "HOMERECIPE_FILE : $HOMERECIPE_FILE"
+  echo "HOMERECIPE_SCRIPTS : $HOMERECIPE_SCRIPTS"
+  echo "HOMERECIPE_PREFIX : $HOMERECIPE_PREFIX"
+  echo "COOKWARE : $COOKWARE"
+  echo "Extra Arg : $*"
+}
+
+prompt_help() {
+  local help
+  read -rd '' help <<-EOF
+Homerecipe
+
+  Main usage:
+    cook recipes          -- cook recipes under $HOMERECIPE_DIR/recipes/ directory
+    cook prep             -- make recipes, overriding the existing contents
+    cook dotfiles [-f]    -- map dotfiles to $HOME
+
+    cook all [-f]         -- cook recipes, map dotfiles, and kick off run-custom if exist
+
+  Custom usage:
+    cook custom           -- kicks off $HOMERECIPE_DIR/misc/run-custom.sh
+                             only if it exists
+
+  Note:
+    use -f with caution, you can delete existing dotfiles under \$HOME
+EOF
+  echo "$help"
+  if [[ -z $COOKWARE ]]; then return 1; fi
+}
+
+if [[ -f $COOKWARE ]]
+then
+  $COOKWARE "$@"
+elif [[ $COOKWARE = "debug" ]]
+then
+  $COOKWARE
+else
+  prompt_help
+fi

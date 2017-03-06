@@ -1,13 +1,16 @@
-### Maintained since 2016
+## Alias setup
 
 ## Basic Alias - shell related
 alias c='clear'
 alias l='ls -lFG'
-alias ll='ls -lFG'
+alias ll='ls -ltrFG'
 alias la='ls -laFG'
 alias ls='ls -FG'
 alias vi='vim'
+alias rmf='rm -rf'
 
+## Homebrew
+alias sysupdate='brew update && brew upgrade && brew doctor'
 
 
 ## Custom Alias

@@ -1,2 +1,7 @@
-### Maintained since 2016
-# TODO: add more options that I use on other machines
+## Custom Function setup
+
+# Short hand for cd-which
+# Thanks to http://unix.stackexchange.com/a/251339/200965
+cdw() {
+  cd "$(dirname "$(which $1)")"
+}

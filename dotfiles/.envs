@@ -1,6 +1,7 @@
-### Maintained since 2016
-# TODO: add more options that I use on other machines
+## Environmental variable setup
+
 export PAGER=less
+export LESS="-iMNR"
 
 # Homebrew Cask install dir location
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
