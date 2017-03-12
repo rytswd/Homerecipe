@@ -1,10 +1,10 @@
 # Homerecipe
-Recipe to cook my `$HOME`
+Recipe to cook my `$HOME` :yum:
 
 
 ## My `$HOME` isn't probably your `$HOME`...
 This is rather my own recipe, which may not work for you.  
-<http://dotfiles.github.io/> provides all the alternative ways to handle dotfiles.
+<http://dotfiles.github.io/> provides many alternative ways to handle dotfiles.
 
 I created this repo because I wanted to wrap up dotfiles I already had into one bundle.  
 This repository contains all of my personal setup in `dotfiles` and `recipes` directories.  
@@ -22,7 +22,7 @@ Also, it is recommended to have a basic understanding of shell scripting.
 If you wish to use `Homerecipe` logic for maintaining your own `$HOME`, I would strongly suggest to fork this repository.  
 Because all the `dotfiles` and `recipes` are only meant to be used by myself, downloading / cloning this repository directly means that you may have difficult time syncing to the latest.
 
-*NOTE: Although I'm not intending to update this repo so frequently.*
+<sub><sup>*NOTE: Although I'm not intending to update the core logic of this repo so frequently.*</sup></sub>
 
 ### Save Your Own $HOME
 The core of this repository is just the `scripts` directory.  
