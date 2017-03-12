@@ -1,7 +1,11 @@
 ## Source all dotfiles
 # This file gets loaded by .zshrc, and .bash_profile
 
-echo "  Loading aliases";   source ~/.aliases
-echo "  Loading envs";      source ~/.envs
-echo "  Loading functions"; source ~/.functions
-echo "  Loading privates";  source ~/.private
+source ~/.aliases;     # echo "  Loaded aliases"
+source ~/.envs;        # echo "  Loaded envs"
+source ~/.functions;   # echo "  Loaded functions"; 
+
+if [[ -f ~/.private ]]
+then
+  source ~/.private;   # echo "  Loaded privates";
+fi
