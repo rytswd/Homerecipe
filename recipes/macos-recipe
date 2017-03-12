@@ -138,8 +138,7 @@ tell application "Terminal"
   local allOpenedWindows
   local initialOpenedWindows
   local windowID
-  (* Update the below theme to Pro if no background is preferable *)
-  set themeName to "SAO"
+  set themeName to "R"
   (* Store the IDs of all the open terminal windows. *)
   set initialOpenedWindows to id of every window
   (* Open the custom theme so that it gets added to the list
