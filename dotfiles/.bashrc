@@ -1,3 +1,5 @@
+# shellcheck disable=2148,1090
+
 ## Bash setup
 # Set bash PS1
 function __prompt_command {
@@ -5,19 +7,24 @@ function __prompt_command {
   PS1="[ "
 
   # color definitions
-  local red='\[$(tput setaf 1)\]'
-  local cyan='\[$(tput setaf 6)\]'
-  local white='\[$(tput setaf 7)\]'
-  local d='\[$(tput sgr0)\]'
+  local red
+  red="\[$(tput setaf 1)\]"
+  local cyan
+  cyan="\[$(tput setaf 6)\]"
+  local white
+  white="\[$(tput setaf 7)\]"
+  local d
+  d="\[$(tput sgr0)\]"
   PS1+="$white\u$d $cyan@$d $white\h$d ] \w "
 
   # use dirs -0 to replace with tilde
-  local pwd=`dirs -0`
-  local len=$(( $(tput cols) - ${#USER} - ${#HOSTNAME} - 12 - ${#pwd}))
+  local current
+  current=$(dirs -0)
+  local len=$(( $(tput cols) - ${#USER} - ${#HOSTNAME} - 12 - ${#current}))
 
   if [ $r != 0 ]; then
       PS1+=" $red[ret:$r]"
-      len=$(($len - 7 - ${#r}))
+      len=$((len - 7 - ${#r}))
   fi
 
   # fill with dashes
