@@ -1,6 +1,7 @@
 ## Alias setup
 
-## Basic Alias - shell related
+## Shell related
+# Basic aliases
 alias c='clear'
 alias l='ls -lFG'
 alias ll='ls -ltrFG'
@@ -8,6 +9,13 @@ alias la='ls -laFG'
 alias ls='ls -FG'
 alias vi='vim'
 alias rmf='rm -rf'
+
+# Grep with colour - GREP_OPTIONS is deprecated
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ngrep='egrep --color=never' # no colour
+
 
 ## Homebrew
 alias sysupdate='brew update && brew upgrade && brew doctor'
@@ -17,5 +25,5 @@ alias sysupdate='brew update && brew upgrade && brew doctor'
 # Check all the files modified within last week / last 2 weeks
 alias chlw='find . -mtime -1w -type file -exec ls -lh {} \;'
 alias chl2w='find . -mtime -2w -type file -exec ls -lh {} \;'
-# Delete all .DS_Store files under the current folder structure
-alias rmds='find . -name ".DS_Store" -type file -exec rm -v {} \;'
+# Delete all .DS_Store files recursively
+alias rmds='find . -type f -name "*.DS_Store" -ls -delete'

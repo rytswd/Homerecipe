@@ -5,3 +5,11 @@ export LESS="-iMNR"
 
 # Homebrew Cask install dir location
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+## Node related
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history;
+export NODE_REPL_HISTORY_SIZE='32768';
+
+# Use sloppy mode by default
+export NODE_REPL_MODE='sloppy';

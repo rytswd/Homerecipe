@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 # HOMERECIPE_SCRIPTS and HOMERECIPE_DIR need to be defined
-# Assumed "cook all" is called to run this script
+# Assumed "cook" is called to run this script
+
+[[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
 
 # Map dotfiles first - .envs is then used below
 "${HOMERECIPE_SCRIPTS}"/map-dotfiles.sh "$@"

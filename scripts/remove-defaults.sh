@@ -5,9 +5,8 @@
 
 [[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
 
-## Cook recipes
-# Homebrew
-brew bundle --file="${HOMERECIPE_DIR}"/recipes/brew-recipe
+echo "Removing existing dotfiles..."
+find "${HOMERECIPE_DIR}/dotfiles/" -type f -name ".*" ! \( -name .private \) -ls -delete
 
-# npm - manual workaround
-for i in $(cat "${HOMERECIPE_DIR}"/recipes/npm-recipe); do npm install -g "$i"; done
+echo "Removing existing recipes..."
+find "${HOMERECIPE_DIR}/recipes/" -type f -name "*" -ls -delete
