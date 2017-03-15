@@ -1,7 +1,7 @@
 ## Custom Function setup
 
-# Short hand for cd-which
+# Short hand for cd-which - ignores if an alias is provided
 # Thanks to http://unix.stackexchange.com/a/251339/200965
 cdw() {
-  cd "$(dirname "$(which $1)")"
+  alias $1 &> /dev/null || cd "$(dirname "$(which $1)")"
 }
