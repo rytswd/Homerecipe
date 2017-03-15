@@ -24,9 +24,7 @@ export HOMERECIPE_FILE="${HOMERECIPE_DIR%/}/${0##*/}"
 export HOMERECIPE_SCRIPTS="${HOMERECIPE_DIR%/}/core/scripts/"
 export HOMERECIPE_PREFIX="${HOMERECIPE_FILE%/*/*}"
 
-COOKWARE="$1"
-shift
-case "$COOKWARE" in
+case "$1" in
   h)          COOKWARE="prompt_help" ;;
   -h)         COOKWARE="prompt_help" ;;
   --h)        COOKWARE="prompt_help" ;;
@@ -39,8 +37,9 @@ case "$COOKWARE" in
   dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
 
-  custom)     COOKWARE="${HOMERECIPE_DIR}/misc/run-custom.sh"
+  custom)     COOKWARE="${HOMERECIPE_DIR}/custom/run-custom.sh"
 esac
+shift
 
 debug() {
   echo "Debug information"
@@ -78,15 +77,16 @@ Shell-crafted tool to help manage your \$HOME
     use -f with caution, you can delete existing dotfiles under \$HOME
 EOF
   echo "$help"
-  if [[ -z $COOKWARE ]]; then return 1; fi
 }
 
 if [[ -f $COOKWARE ]]
 then
   $COOKWARE "$@"
-elif [[ $COOKWARE = "debug" ]]
+elif [[ ! -z $COOKWARE ]]
 then
   $COOKWARE
 else
-  prompt_help
+  echo "Error - specified command not found"
+  echo ""
+  prompt_help && exit 1
 fi

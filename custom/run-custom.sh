@@ -8,12 +8,12 @@
 
 [[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
 
-
+# ZSH setup
 "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
 "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
 
 # macos recipe if exist - bunch of macos preferences
 if [[ -f "${HOMERECIPE_DIR}"/recipes/macos-recipe ]]
 then
-  "${HOMERECIPE_DIR}"/recipes/macos-recipe
+  bash "${HOMERECIPE_DIR}"/recipes/macos-recipe
 fi
