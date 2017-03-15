@@ -20,7 +20,10 @@ fi
 "${HOMERECIPE_SCRIPTS}"/cook-recipes.sh
 
 # Run custom script if run-custom.sh is found
-if [[ -f "${HOMERECIPE_DIR}"/misc/run-custom.sh ]]
+if [[ -f "${HOMERECIPE_DIR}"/custom/run-custom.sh ]]
 then
-  "${HOMERECIPE_DIR}"/misc/run-custom.sh
+  "${HOMERECIPE_DIR}"/custom/run-custom.sh
 fi
+
+# This only creates the symlink for .homerecipe, it needs to be consumed manually
+[[ -f "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"

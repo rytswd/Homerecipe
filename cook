@@ -21,7 +21,7 @@ quiet_cd() {
 export HOMERECIPE_DIR
 HOMERECIPE_DIR="$(quiet_cd "${0%/*}" && pwd -P)"
 export HOMERECIPE_FILE="${HOMERECIPE_DIR%/}/${0##*/}"
-export HOMERECIPE_SCRIPTS="${HOMERECIPE_DIR%/}/scripts/"
+export HOMERECIPE_SCRIPTS="${HOMERECIPE_DIR%/}/core/scripts/"
 export HOMERECIPE_PREFIX="${HOMERECIPE_FILE%/*/*}"
 
 COOKWARE="$1"
@@ -33,7 +33,9 @@ case "$COOKWARE" in
   help)       COOKWARE="prompt_help" ;;
   debug)      COOKWARE="debug" ;;
   recipes)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
+  restore)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
   prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
+  backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
 
@@ -55,13 +57,18 @@ prompt_help() {
   local help
   read -rd '' help <<-EOF
 Homerecipe
+Shell-crafted tool to help manage your \$HOME
 
   Main usage:
     cook recipes          -- cook recipes under $HOMERECIPE_DIR/recipes/ directory
     cook prep             -- make recipes, overriding the existing contents
     cook dotfiles [-f]    -- map dotfiles to $HOME
 
-    cook all [-f]         -- cook recipes, map dotfiles, and kick off run-custom if exist
+    cook all [-f]         -- cook recipes, map dotfiles,
+                             kick off run-custom if exist,
+                             and symlink .homerecipe
+
+    cook remove           -- remove default recipes and dotfiles
 
   Custom usage:
     cook custom           -- kicks off $HOMERECIPE_DIR/misc/run-custom.sh

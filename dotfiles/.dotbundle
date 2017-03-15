@@ -3,9 +3,7 @@
 
 source ~/.aliases;     # echo "  Loaded aliases"
 source ~/.envs;        # echo "  Loaded envs"
-source ~/.functions;   # echo "  Loaded functions"; 
+source ~/.functions;   # echo "  Loaded functions";
 
-if [[ -f ~/.private ]]
-then
-  source ~/.private;   # echo "  Loaded privates";
-fi
+[[ -f ~/.private ]] && source ~/.private;       # echo "  Loaded privates"
+[[ -f ~/.homerecipe ]] && source ~/.homerecipe; # echo "  Loaded homerecipe"

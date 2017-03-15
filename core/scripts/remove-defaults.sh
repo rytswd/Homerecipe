@@ -9,4 +9,4 @@ echo "Removing existing dotfiles..."
 find "${HOMERECIPE_DIR}/dotfiles/" -type f -name ".*" ! \( -name .private \) -ls -delete
 
 echo "Removing existing recipes..."
-find "${HOMERECIPE_DIR}/recipes/" -type f -name "*" -ls -delete
+find "${HOMERECIPE_DIR}/recipes/" -type f -name "*" ! \( -name .homerecipe \) -ls -delete
