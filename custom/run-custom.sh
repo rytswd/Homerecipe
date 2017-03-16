@@ -8,12 +8,14 @@
 
 [[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
 
+echo "Homerecipe: custom installation starting"
+
 # ZSH setup
-"${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
-"${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
+[[ -f "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
+[[ -f "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
+
+# nvm setup
+[[ -f "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh
 
 # macos recipe if exist - bunch of macos preferences
-if [[ -f "${HOMERECIPE_DIR}"/recipes/macos-recipe ]]
-then
-  bash "${HOMERECIPE_DIR}"/recipes/macos-recipe
-fi
+[[ -f "${HOMERECIPE_DIR}"/recipes/macos-recipe ]] && bash "${HOMERECIPE_DIR}"/recipes/macos-recipe
