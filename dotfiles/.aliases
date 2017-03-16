@@ -16,6 +16,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ngrep='egrep --color=never' # no colour
 
+alias sha1sum='openssl sha1'
 
 ## Homebrew
 alias sysupdate='brew update && brew upgrade && brew doctor'
