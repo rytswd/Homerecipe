@@ -31,11 +31,11 @@ case "$1" in
   help)       COOKWARE="prompt_help" ;;
   debug)      COOKWARE="debug" ;;
   recipes)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
-  restore)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
   prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
+  restore)    COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh -f" ;;
   remove)     COOKWARE="${HOMERECIPE_SCRIPTS}/remove-defaults.sh" ;;
   check)      COOKWARE="${HOMERECIPE_SCRIPTS}/check-updates.sh" ;;
 
