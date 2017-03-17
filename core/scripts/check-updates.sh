@@ -33,7 +33,7 @@ if [[ ! -z $(git status --porcelain) ]]; then
 elif [ "$LOCAL" = "$REMOTE" ]; then
   echo "Homerecipe up-to-date! :)"
 elif [ "$LOCAL" = "$BASE" ]; then
-  confim "Recipes/dotfiles out of date - do you want to get the latest? [y/N]" && { git pull; }
+  confirm "Recipes/dotfiles out of date - do you want to get the latest? [y/N]" && { git pull; }
 elif [ "$REMOTE" = "$BASE" ]; then
   confirm "Some updates found, which need to be pushed - do you want to go ahead and push? [y/N]" && { git push; }
 else
