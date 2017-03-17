@@ -33,6 +33,7 @@ case "$1" in
   recipes)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
   prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
+  map)        COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
   dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
   restore)    COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh -f" ;;
@@ -61,15 +62,18 @@ Homerecipe
 Shell-crafted tool to help manage your \$HOME
 
   Main usage:
+    cook check            -- check if you have the current latest files
     cook recipes          -- cook recipes under $HOMERECIPE_DIR/recipes/ directory
-    cook prep             -- make recipes, overriding the existing contents
     cook dotfiles [-f]    -- map dotfiles to $HOME
+    cook [prep|backup]    -- make recipes, overriding the existing contents
 
-    cook all [-f]         -- cook recipes, map dotfiles,
+    cook restore [-f]     -- cook recipes, map dotfiles,
                              kick off run-custom if exist,
                              and symlink .homerecipe
 
     cook remove           -- remove default recipes and dotfiles
+
+    cook help             -- show this message
 
   Custom usage:
     cook custom           -- kicks off $HOMERECIPE_DIR/misc/run-custom.sh
