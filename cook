@@ -36,6 +36,8 @@ case "$1" in
   backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
+  remove)     COOKWARE="${HOMERECIPE_SCRIPTS}/remove-defaults.sh" ;;
+  check)      COOKWARE="${HOMERECIPE_SCRIPTS}/check-updates.sh" ;;
 
   custom)     COOKWARE="${HOMERECIPE_DIR}/custom/run-custom.sh"
 esac

@@ -5,5 +5,5 @@ source ~/.aliases;     # echo "  Loaded aliases"
 source ~/.envs;        # echo "  Loaded envs"
 source ~/.functions;   # echo "  Loaded functions";
 
-[[ -f ~/.private ]] && source ~/.private;       # echo "  Loaded privates"
-[[ -f ~/.homerecipe ]] && source ~/.homerecipe; # echo "  Loaded homerecipe"
+[[ -f ~/.private ]] && source ~/.private || echo ".private not found"
+[[ -f ~/.homerecipe ]] && source ~/.homerecipe || echo ".homerecipe not found"

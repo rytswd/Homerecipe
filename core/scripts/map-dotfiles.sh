@@ -21,7 +21,7 @@ find "${HOMERECIPE_DIR}"/dotfiles \
     ! \( -name .git -o \
       -name README.md -o \
       -name .DS_Store \) \
-    -exec ln "${ARG}" {} "$HOME" \; 2> /tmp/dotfiles_setup.log
+    -exec ln "$ARG" {} "$HOME" \; 2> /tmp/dotfiles_setup.log
 
 ## Handle errors
 __error=$(</tmp/dotfiles_setup.log)
