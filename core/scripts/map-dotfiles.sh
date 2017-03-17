@@ -27,7 +27,7 @@ find "${HOMERECIPE_DIR}"/dotfiles \
 __error=$(</tmp/dotfiles_setup.log)
 if [ ! -z "$__error" ]; then
     __error_code=1
-    echo "Error: there was some error occurred while creating symlinks"
+    echo "Warning: there was some error occurred while creating symlinks"
     cat /tmp/dotfiles_setup.log
     echo ""
 else

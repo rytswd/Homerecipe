@@ -81,7 +81,7 @@ EOF
   echo "$help"
 }
 
-if [[ -f $COOKWARE ]]
+if [[ -r $COOKWARE ]]
 then
   $COOKWARE "$@"
 elif [[ ! -z $COOKWARE ]]

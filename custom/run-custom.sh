@@ -11,11 +11,11 @@
 echo "Homerecipe: custom installation starting"
 
 # ZSH setup
-[[ -f "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
-[[ -f "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
+[[ -r "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
+[[ -r "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
 
 # nvm setup
-[[ -f "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh
+[[ -r "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh
 
 # macos recipe if exist - bunch of macos preferences
-[[ -f "${HOMERECIPE_DIR}"/recipes/macos-recipe ]] && bash "${HOMERECIPE_DIR}"/recipes/macos-recipe
+[[ -r "${HOMERECIPE_DIR}"/recipes/macos-recipe ]] && bash "${HOMERECIPE_DIR}"/recipes/macos-recipe

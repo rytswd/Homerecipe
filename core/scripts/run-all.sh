@@ -11,7 +11,7 @@
 # shellcheck disable=1090
 # .envs should define env variables before brewing,
 #   namely HOMEBREW_CASK_OPTS="--appdir=/Applications"
-if [[ -f "$HOME"/.envs ]]
+if [[ -r "$HOME"/.envs ]]
 then
   source "$HOME"/.envs
 fi
@@ -20,10 +20,10 @@ fi
 "${HOMERECIPE_SCRIPTS}"/cook-recipes.sh
 
 # Run custom script if run-custom.sh is found
-if [[ -f "${HOMERECIPE_DIR}"/custom/run-custom.sh ]]
+if [[ -r "${HOMERECIPE_DIR}"/custom/run-custom.sh ]]
 then
   "${HOMERECIPE_DIR}"/custom/run-custom.sh
 fi
 
 # This only creates the symlink for .homerecipe, it needs to be consumed manually
-[[ -f "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"
+[[ -r "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"
