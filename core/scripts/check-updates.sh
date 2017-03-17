@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# This script uses the logic explained in here:
-#   http://stackoverflow.com/a/3278427/7153181
-
 # HOMERECIPE_SCRIPTS and HOMERECIPE_DIR need to be defined
 # Assumed "cook" is called to run this script
 
@@ -22,6 +19,9 @@ confirm() {
 }
 
 cd "$HOMERECIPE_DIR" >/dev/null || { echo "Error: cd failed, could not locate $HOMERECIPE_DIR"; exit 1; }
+
+# This script uses the logic explained in here:
+#   http://stackoverflow.com/a/3278427/7153181
 
 UPSTREAM=${1:-'@{u}'}
 LOCAL=$(git rev-parse @)
