@@ -26,4 +26,5 @@ then
 fi
 
 # This only creates the symlink for .homerecipe, it needs to be consumed manually
-[[ -r "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"
+# This should be handled by map-dotfiles.sh
+[[ -f "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"

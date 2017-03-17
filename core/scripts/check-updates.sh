@@ -28,12 +28,14 @@ LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse "$UPSTREAM")
 BASE=$(git merge-base @ "$UPSTREAM")
 
-if [ "$LOCAL" = "$REMOTE" ]; then
+if [[ ! -z $(git status --porcelain) ]]; then
+  confirm "Some updates found - do you want to save, and push back to the server? [y/N]" && { git add .; git commit -m "Update with script"; git push; }
+elif [ "$LOCAL" = "$REMOTE" ]; then
   echo "Homerecipe up-to-date! :)"
 elif [ "$LOCAL" = "$BASE" ]; then
-  confim "Recipes/dotfiles out of date - do you want to get the latest? [y/N]" && (git pull)
+  confim "Recipes/dotfiles out of date - do you want to get the latest? [y/N]" && { git pull; }
 elif [ "$REMOTE" = "$BASE" ]; then
-  confirm "Some updates found, which need to be pushed - do you want to go ahead and push? [y/N]" && { git add .; git commit -m "Update with script"; git push; }
+  confirm "Some updates found, which need to be pushed - do you want to go ahead and push? [y/N]" && { git push; }
 else
   echo "Homerecipe found to be diverged"
 fi
