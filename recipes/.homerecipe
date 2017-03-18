@@ -1,7 +1,7 @@
 # Usage: source .homerecipe
 
 # Assumes the original file structure of Homerecipe/recipes/.homerecipe
-[[ -L $_ ]] || { echo ".homerecipe is not created as a symlink, exiting"; return; }
+[[ -L $_ ]] || { echo ".homerecipe is not created as a symlink, skipping alias mapping"; return; }
 HOMERECIPE_DIR=$(dirname $(dirname $(readlink $_)))
 alias cook="$HOMERECIPE_DIR/cook"
 unset HOMERECIPE_DIR
