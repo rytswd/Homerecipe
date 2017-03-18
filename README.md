@@ -76,7 +76,7 @@ The following condition is assumed (and tested)
 I consistently work between different machines - with my laptop outside, and desktop machine at home.  
 Until I created this repository, I often ended up running the same installation, dotfile updates, etc. on both machines.
 
-I often run the following commands to restore / sync my `dotfiles` and `recipes`.
+I run the following commands to backup / restore / sync my `dotfiles` and `recipes`.
 
 ```bash
 cook check # tell me if I'm up-to-date
