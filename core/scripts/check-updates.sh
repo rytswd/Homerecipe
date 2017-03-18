@@ -23,6 +23,8 @@ cd "$HOMERECIPE_DIR" >/dev/null || { echo "Error: cd failed, could not locate $H
 # This script uses the logic explained in here:
 #   http://stackoverflow.com/a/3278427/7153181
 
+FETCH_RESULT=$(git fetch)
+
 UPSTREAM=${1:-'@{u}'}
 LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse "$UPSTREAM")
