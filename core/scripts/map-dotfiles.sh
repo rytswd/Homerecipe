@@ -38,6 +38,6 @@ fi
 ## Clean up log file
 rm /tmp/dotfiles_setup.log
 
-ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"
+[[ -f "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"
 
 exit $__error_code
