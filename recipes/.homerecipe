@@ -4,4 +4,5 @@
 [[ -L $_ ]] || { echo ".homerecipe is not created as a symlink, skipping alias mapping"; return; }
 HOMERECIPE_DIR=$(dirname $(dirname $(readlink $_)))
 alias cook="$HOMERECIPE_DIR/cook"
+alias cookdir="cd $HOMERECIPE_DIR"
 unset HOMERECIPE_DIR
