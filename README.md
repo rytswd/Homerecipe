@@ -1,30 +1,29 @@
 # Homerecipe
 Recipe to cook my `$HOME` :yum:
 
-### My \$HOME isn't your \$HOME :house:
+#### My \$HOME isn't your \$HOME :house:
 The core of this repository is a set of scripts to manage your $HOME.  
 -   `cook`
 -   `core/scripts/*`
 
-This repository contains many `dotfiles` and `recipes`, but they are for my own usage.
+They allow me to sync my $HOME settings across multiple devices.
+
+Please note thta `dotfiles` and `recipes` are  my personal `$HOME` setup.  
+They are not intended to be useful for all.
 
 
 ## Example Use Case
 
-Use it as is (NOT recommended)
+#### Use it as is
+(NOT recommended, they are my own setup)
 ```bash
 git clone http://github.com/rytswd/homerecipe
 ./homerecipe/cook restore # Set up with all the defaults
 ```
 
-Use scripts to manage your existing $HOME setup
-```bash
-git clone http://github.com/rytswd/homerecipe
-./homerecipe/cook remove # Remove default dotfiles and recipes
-./homerecipe/cook backup # save backup
-```
+#### Manage your existing $HOME setup
 
-Or store in Forked repo
+(*Recommended*) The below commands with Forked repository helps you manage your own `$HOME`.
 ```bash
 # Fork this repository
 git clone YOUR_FORKED_REPOSITORY
@@ -35,9 +34,11 @@ git commit -a -m "Restore backup"
 git push
 ```
 
-Also `.homerecipe` is provided to set up alias for `cook` command.
 
-In general, it is recommended to have some basic understanding of shell scripting.
+#### Keep all devices up-to-date
+`.homerecipe` is provided to set up alias for `cook` command.  
+`cook check` allows you to quickly sync with the repository.
+
 
 
 ## Homerecipe Scripts
@@ -60,6 +61,8 @@ Homerecipe is just a directory structure with data in it. What kind of data? It 
 
 `dotfiles` directory contains many dotfiles I rely on.  
 `recipes` directory contains a few items, such as list of installed `brew` and `npm` packages.
+
+Syncing those `recipes` and `cook`-ing them allow me to apply the same setup to multiple devices.
 
 
 ## Environment
@@ -108,3 +111,8 @@ Thanks to the below list for setting up my own dotfiles
 #### More on dotfiles
 GitHub has a nice list of many other alternatives  
 <http://dotfiles.github.io/>
+
+---
+
+#### License
+MIT
