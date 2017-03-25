@@ -39,5 +39,5 @@ elif [ "$LOCAL" = "$BASE" ]; then
 elif [ "$REMOTE" = "$BASE" ]; then
   confirm "Some updates found, which need to be pushed - do you want to go ahead and push? [y/N]" && { git push; }
 else
-  echo "Homerecipe found to be diverged"
+  echo "Homerecipe found to be diverged... Please resolve manually using git commands"
 fi

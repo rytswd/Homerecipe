@@ -82,11 +82,12 @@ Until I created this repository, I often ended up running the same installation,
 I run the following commands to backup / restore / sync my `dotfiles` and `recipes`.
 
 ```bash
-cook check # tell me if I'm up-to-date
-cook restore # get the latest
-# or `cook recipes` for quick update to packages
-cook backup # backup the current setup
-cook check # prompt me for push
+cook check # tells you the current status
+# If up-to-date :       Homerecipe up-to-date! :)
+# If you are ahead :    Some updates found - do you want to save, and push back to the server? [y/N]
+#    and with commit :  Some updates found, which need to be pushed - do you want to go ahead and push? [y/N]
+# If you are behind :   Recipes/dotfiles out of date - do you want to get the latest? [y/N]
+# If other cases... :   Homerecipe found to be diverged... Please resolve manually using git commands
 ```
 
 ---
