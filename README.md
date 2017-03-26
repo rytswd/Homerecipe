@@ -99,7 +99,7 @@ This repository only focuses on my own usage, which means this was only tested w
 
 #### macos-recipe
 There is currently no way to create this file programmatically.  
-Please manually update the file (make sure that the file is executable).
+Please manually update the file.
 
 ---
 
