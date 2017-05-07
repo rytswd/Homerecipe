@@ -9,6 +9,7 @@ generator-redux-react
 gulp
 gulp-cli
 learnyounode
+mocha
 n
 node
 nodemon
