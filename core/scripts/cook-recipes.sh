@@ -11,7 +11,8 @@ brew bundle --file="${HOMERECIPE_DIR}"/recipes/brew-recipe
 
 # npm - manual workaround
 npmroot=$(npm root -g)
-for i in $(cat "${HOMERECIPE_DIR}"/recipes/npm-recipe); do
+grep -v '^ *#' < "${HOMERECIPE_DIR}"/recipes/npm-recipe | while IFS= read -r i
+do
   if [[ -d $npmroot/$i ]]
     then
     echo "Skipping as already installed: $i"
