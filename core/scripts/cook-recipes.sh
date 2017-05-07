@@ -10,4 +10,12 @@
 brew bundle --file="${HOMERECIPE_DIR}"/recipes/brew-recipe
 
 # npm - manual workaround
-for i in $(cat "${HOMERECIPE_DIR}"/recipes/npm-recipe); do npm install -g "$i"; done
+npmroot=$(npm root -g)
+for i in $(cat "${HOMERECIPE_DIR}"/recipes/npm-recipe); do
+  if [[ -d $npmroot/$i ]]
+    then
+    echo "Skipping as already installed: $i"
+  else
+    npm install -g "$i"
+  fi
+done
