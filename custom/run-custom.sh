@@ -9,11 +9,13 @@ source "${HOMERECIPE_SCRIPTS}"/util.sh
 echo "Homerecipe: custom installation starting"
 
 # ZSH setup
-[[ -r "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
-[[ -r "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
+if [[ $HOMERECIPE_ZSH_INSTALL == 'true' ]]; then
+  [[ -r "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/install-powerline.sh
+  [[ -r "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/zsh/zsh-setup.sh
+fi
 
-# nvm setup
-[[ -r "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh
+# nvm setup - disabled as reviwing n as alternative
+# [[ -r "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh ]] && "${HOMERECIPE_DIR}"/custom/nvm/nvm-setup.sh
 
 # macos recipe if exist - bunch of macos preferences
 if [[ $HOMERECIPE_MODE == 'macos' ]]; then
