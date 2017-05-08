@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-# HOMERECIPE_SCRIPTS and HOMERECIPE_DIR need to be defined
-# Assumed "cook" is called to run this script
-
-[[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
+# shellcheck disable=SC1091,SC1090
+source "${HOMERECIPE_SCRIPTS}"/util.sh
 
 __error=''
 __error_code=0

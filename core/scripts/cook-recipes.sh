@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# HOMERECIPE_SCRIPTS and HOMERECIPE_DIR need to be defined
-# Assumed "cook" is called to run this script
-
-[[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
+# shellcheck disable=SC1091,SC1090
+source "${HOMERECIPE_SCRIPTS}"/util.sh
 
 ## Cook recipes
 # Homebrew
-brew bundle --file="${HOMERECIPE_DIR}"/recipes/brew-recipe
+if [[ $HOMERECIPE_MODE == 'macos' ]]; then
+  brew bundle --file="${HOMERECIPE_DIR}"/recipes/brew-recipe
+fi
 
 # npm - manual workaround
 npmroot=$(npm root -g)

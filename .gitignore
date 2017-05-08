@@ -1,2 +1,8 @@
 # I use .private to store some local settings
 *.private
+
+# .homerecipe works as a configuration file,
+#   which one can control how Homerecipe should run.
+#   In order to support that, the file is manually staged,
+#   circumventing the .gitignore file every time it needs an update
+.homerecipe

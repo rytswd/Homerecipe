@@ -1,22 +1,7 @@
 #!/usr/bin/env bash
 
-# HOMERECIPE_SCRIPTS and HOMERECIPE_DIR need to be defined
-# Assumed "cook" is called to run this script
-
-[[ ! -z $HOMERECIPE_DIR ]] || { echo "\$HOMERECIPE_DIR is not found. Process exiting."; exit 1; }
-
-confirm() {
-  # call with a prompt string or use a default
-  read -r -p "${1:-Are you sure? [y/N]} " response
-  case "$response" in
-    [yY][eE][sS]|[yY])
-      true
-      ;;
-    *)
-      false
-      ;;
-  esac
-}
+# shellcheck disable=SC1091,SC1090
+source "${HOMERECIPE_SCRIPTS}"/util.sh
 
 cd "$HOMERECIPE_DIR" >/dev/null || { echo "Error: cd failed, could not locate $HOMERECIPE_DIR"; exit 1; }
 

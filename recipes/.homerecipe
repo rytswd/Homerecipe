@@ -6,3 +6,7 @@ HOMERECIPE_DIR=$(dirname $(dirname $(readlink $_)))
 alias cook="$HOMERECIPE_DIR/cook"
 alias cookdir="cd $HOMERECIPE_DIR"
 unset HOMERECIPE_DIR
+
+# Homerecipe's default mode is macos (my main platform), available modes are:
+#   macos, linux (windows not yet supported)
+export HOMERECIPE_MODE='macos'
