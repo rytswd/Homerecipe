@@ -8,5 +8,6 @@ alias cookdir="cd $HOMERECIPE_DIR"
 unset HOMERECIPE_DIR
 
 # Homerecipe's default mode is macos (my main platform), available modes are:
-#   macos, linux (windows not yet supported)
+#   macos, linux (linux support will be extended to be distro based)
+#   (windows is yet to come)
 export HOMERECIPE_MODE='macos'

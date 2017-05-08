@@ -7,9 +7,11 @@ set +o posix
 
 #------: Main Logic :--------------------------------------------
 # The logic is really simple - this "cook" executable
-#   will kick off shell scripts under scripts/ directory.
+#   will kick off shell scripts under core/scripts/ directory.
 #
 # All the main business logic is under each script.
+# util.sh provides some defaulting and catching missing params.
+#
 #------: Special Thanks :----------------------------------------
 # Some of the base logic for this "cook" came from
 #   the ideas of Homebrew https://github.com/Homebrew/brew

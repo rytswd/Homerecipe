@@ -14,10 +14,10 @@
 
 [[ ! -z $DEBUG ]] && { echo "\$DEBUG is set, log verbosity is set high"; }
 
-# Default to macos mode
+# Default to macos mode if not defined
 [[ ! -z $HOMERECIPE_MODE ]] || HOMERECIPE_MODE="macos"
 
-
+# Define utility functions
 confirm() {
   # call with a prompt string or use a default
   read -r -p "${1:-Are you sure? [y/N]} " response
