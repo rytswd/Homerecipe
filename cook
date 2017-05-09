@@ -32,16 +32,25 @@ case "$1" in
   --h)        COOKWARE="prompt_help" ;;
   help)       COOKWARE="prompt_help" ;;
   debug)      COOKWARE="debug" ;;
+
+  setup)      COOKWARE="${HOMERECIPE_SCRIPTS}/setup.sh" ;;
+  check)      COOKWARE="${HOMERECIPE_SCRIPTS}/check-updates.sh" ;;
+
+  # dotfiles
+  map)        COOKWARE="${HOMERECIPE_SCRIPTS}/cook-dotfiles.sh" ;;
+  dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/cook-dotfiles.sh" ;;
+  rmdotfiles) COOKWARE="${HOMERECIPE_SCRIPTS}/remove-dotfiles.sh" ;;
+
+  # recipes
   recipes)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
-  prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
-  backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
-  map)        COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
-  dotfiles)   COOKWARE="${HOMERECIPE_SCRIPTS}/map-dotfiles.sh" ;;
+  prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/create-recipes.sh" ;;
+  backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/create-recipes.sh" ;;
+  rmrecipes)  COOKWARE="${HOMERECIPE_SCRIPTS}/remove-recipes.sh" ;;
+
+  # other
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
   restore)    COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh -f" ;;
   remove)     COOKWARE="${HOMERECIPE_SCRIPTS}/remove-defaults.sh" ;;
-  check)      COOKWARE="${HOMERECIPE_SCRIPTS}/check-updates.sh" ;;
-  setup)      COOKWARE="${HOMERECIPE_SCRIPTS}/setup.sh" ;;
 
   custom)     COOKWARE="${HOMERECIPE_DIR}/custom/run-custom.sh"
 esac
