@@ -41,6 +41,7 @@ case "$1" in
   restore)    COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh -f" ;;
   remove)     COOKWARE="${HOMERECIPE_SCRIPTS}/remove-defaults.sh" ;;
   check)      COOKWARE="${HOMERECIPE_SCRIPTS}/check-updates.sh" ;;
+  setup)      COOKWARE="${HOMERECIPE_SCRIPTS}/setup.sh" ;;
 
   custom)     COOKWARE="${HOMERECIPE_DIR}/custom/run-custom.sh"
 esac
