@@ -23,7 +23,7 @@ function __prompt_command {
   local len=$(( $(tput cols) - ${#USER} - ${#HOSTNAME} - 12 - ${#current}))
 
   if [ $r != 0 ]; then
-      PS1+=" $red[ret:$r]"
+      PS1+="$red[ret:$r] "
       len=$((len - 7 - ${#r}))
   fi
 
