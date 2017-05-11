@@ -1,5 +1,6 @@
 aurelia
 browserify
+eslint
 express-generator
 firebase-tools
 gatsby

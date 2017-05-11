@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Maps dotfiles from Homerecipe directory to $HOME by creating symlinks
+
 # shellcheck disable=SC1091,SC1090
 source "${HOMERECIPE_SCRIPTS}"/util.sh
 
@@ -16,8 +18,7 @@ fi
 echo "Creating symlinks to git installed dotfiles..."
 find "${HOMERECIPE_DIR}"/dotfiles \
     -maxdepth 1 -mindepth 1 \
-    ! \( -name .git -o \
-      -name README.md -o \
+    ! \( -name README.md -o \
       -name .DS_Store \) \
     -exec ln "$ARG" {} "$HOME" \; 2> /tmp/dotfiles_setup.log
 
