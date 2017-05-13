@@ -1,5 +1,5 @@
 # I use .private to store some local settings
-*.private
+.private
 
 # .homerecipe works as a configuration file,
 #   which one can control how Homerecipe should run.
