@@ -3,26 +3,19 @@
 # shellcheck disable=SC1091,SC1090
 source "${HOMERECIPE_SCRIPTS}"/util.sh
 
-# Map dotfiles first - .envs is then used below
-"${HOMERECIPE_SCRIPTS}"/map-dotfiles.sh "$@"
+## Run Setup
+"${HOMERECIPE_SCRIPTS}"/setup.sh
 
-# shellcheck disable=1090
+## Cook dotfiles
+# Map dotfiles first, then .envs is used from the dotfiles
 # .envs should define env variables before brewing,
 #   namely HOMEBREW_CASK_OPTS="--appdir=/Applications"
-if [[ -r "$HOME"/.envs ]]
-then
-  source "$HOME"/.envs
-fi
+"${HOMERECIPE_SCRIPTS}"/cook-dotfiles.sh "$@" \
+    && [[ -r "$HOME"/.envs ]] && source "$HOME"/.envs
 
-# Cook recipes
+## Cook recipes
 "${HOMERECIPE_SCRIPTS}"/cook-recipes.sh
 
+## Misc
 # Run custom script if run-custom.sh is found
-if [[ -r "${HOMERECIPE_DIR}"/custom/run-custom.sh ]]
-then
-  "${HOMERECIPE_DIR}"/custom/run-custom.sh
-fi
-
-# This only creates the symlink for .homerecipe, it needs to be consumed manually
-# This should be handled by map-dotfiles.sh
-[[ -f "$HOME"/.homerecipe ]] || ln -s "${HOMERECIPE_DIR}"/recipes/.homerecipe "$HOME"
+[[ -r "${HOMERECIPE_DIR}"/custom/run-custom.sh ]] && "${HOMERECIPE_DIR}"/custom/run-custom.sh

@@ -43,8 +43,8 @@ case "$1" in
 
   # recipes
   recipes)    COOKWARE="${HOMERECIPE_SCRIPTS}/cook-recipes.sh" ;;
-  prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/create-recipes.sh" ;;
-  backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/create-recipes.sh" ;;
+  prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
+  backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   rmrecipes)  COOKWARE="${HOMERECIPE_SCRIPTS}/remove-recipes.sh" ;;
 
   # other
@@ -80,11 +80,13 @@ Shell-crafted tool to help manage your \$HOME
     cook check            -- check if you have the current latest files
     cook recipes          -- cook recipes under $HOMERECIPE_DIR/recipes/ directory
     cook dotfiles [-f]    -- map dotfiles to $HOME
-    cook [prep|backup]    -- make recipes, overriding the existing contents
 
-    cook restore [-f]     -- cook recipes, map dotfiles,
+    cook all              -- cook recipes, map dotfiles,
                              kick off run-custom if exist,
                              and symlink .homerecipe
+    cook restore          -- the same as 'cook all -f'
+
+    cook [prep|backup]    -- make recipes, overriding the existing contents
 
     cook remove           -- remove default recipes and dotfiles
 
