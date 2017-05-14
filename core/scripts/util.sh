@@ -14,9 +14,10 @@
 
 [[ ! -z $DEBUG ]] && { echo "\$DEBUG is set, log verbosity is set high"; }
 
-# Default to source .homerecipe if mode is not defined
 # shellcheck disable=SC1090
-[[ ! -z $HOMERECIPE_MODE ]] || source "${HOMERECIPE_DIR}"/recipes/.homerecipe
+# Commented out the default loading as .homerecipe doesn't allow direct loading
+#   No impact as the variables are only used when positively confirmed
+#[[ ! -z $HOMERECIPE_MODE ]] || source "${HOMERECIPE_DIR}"/recipes/.homerecipe
 
 # Define utility functions
 confirm() {
