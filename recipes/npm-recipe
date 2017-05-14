@@ -4,11 +4,7 @@ eslint
 express-generator
 firebase-tools
 gatsby
-generator-bare-react
-generator-chrome-extension
-generator-redux-react
 gulp
-gulp-cli
 learnyounode
 mocha
 n

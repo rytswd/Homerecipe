@@ -32,12 +32,12 @@ unset __HRPATH
 # Homerecipe's default mode is macos (my main platform), available modes are:
 #   macos, linux (linux support will be extended to be distro based)
 #   (windows is yet to come)
-#export HOMERECIPE_MODE='macos'
-export HOMERECIPE_MODE='linux'
+export HOMERECIPE_MODE='macos'
+#export HOMERECIPE_MODE='linux'
 
 # Install ZSH with Oh-My-ZSH
 #   It is not the fastest shell, so bash may fit better depending on the env.
 #   Because run-custom.sh will install ZSH and set the default shell to
 #   ZSH, set the below to false if you do not wish to install ZSH.
-#export HOMERECIPE_ZSH_INSTALL='true'
-export HOMERECIPE_ZSH_INSTALL='false'
+export HOMERECIPE_ZSH_INSTALL='true'
+#export HOMERECIPE_ZSH_INSTALL='false'
