@@ -69,6 +69,7 @@ Syncing those `recipes` and `cook`-ing them allow me to apply the same setup to 
 The following condition is assumed (and tested)
 
 -   macOS
+-   bash and zsh
 -   [Homebrew](http://brew.sh) is installed
 -   `git` client is installed - e.g. `brew install git`
 

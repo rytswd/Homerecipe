@@ -12,9 +12,3 @@ if [[ -f "$HOME"/.homerecipe ]]; then
 else
   source "${HOMERECIPE_DIR}"/recipes/.homerecipe
 fi
-
-# One additional step to untrack any chanegs to .homerecipe file
-#   this makes it easy to keep local file as "up-to-date"
-git update-index --assume-unchanged "${HOMERECIPE_DIR}"/recipes/.homerecipe
-# If you wish to undo, run the following command
-#   $ git update-index --no-assume-unchanged "${HOMERECIPE_DIR}"/recipes/.homerecipe

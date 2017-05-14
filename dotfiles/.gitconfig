@@ -20,6 +20,8 @@
   lga = log --oneline --all --decorate --graph
   rbi = rebase --interactive
   rba = rebase --abort
+  forget = update-index --assume-unchanged
+  unforget = update-index --no-assume-unchanged
 [help]
   autocorrect = 1
 [push]
