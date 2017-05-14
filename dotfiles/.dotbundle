@@ -1,9 +1,14 @@
 ## Source all dotfiles
 # This file gets loaded by .zshrc, and .bash_profile
 
+# Core dotfiles
 source ~/.aliases;     # echo "  Loaded aliases"
 source ~/.envs;        # echo "  Loaded envs"
 source ~/.functions;   # echo "  Loaded functions";
 
-[[ -f ~/.private ]] && source ~/.private || echo ".private not found"
-[[ -f ~/.homerecipe ]] && source ~/.homerecipe || echo ".homerecipe not found"
+# Additional dotfiles - only load in interactive mode
+#   http://stackoverflow.com/a/12442753/7153181
+case $- in *i*)
+  [[ -f ~/.private ]] && source ~/.private || echo ".private not found"
+  [[ -f ~/.homerecipe ]] && source ~/.homerecipe || echo ".homerecipe not found"
+esac
