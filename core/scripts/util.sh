@@ -15,9 +15,9 @@
 [[ ! -z $DEBUG ]] && { echo "\$DEBUG is set, log verbosity is set high"; }
 
 # shellcheck disable=SC1090
-# Commented out the default loading as .homerecipe doesn't allow direct loading
-#   No impact as the variables are only used when positively confirmed
-#[[ ! -z $HOMERECIPE_MODE ]] || source "${HOMERECIPE_DIR}"/recipes/.homerecipe
+# For first time run, it is possible that .homerecipe isn't loaded during the startup.
+# If the file is found in home directory, this tries loading variables from it.
+[[ -L "$HOME"/.homerecipe ]] && source "$HOME"/.homerecipe
 
 # Define utility functions
 confirm() {
