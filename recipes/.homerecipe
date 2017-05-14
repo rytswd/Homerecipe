@@ -11,19 +11,19 @@
 
 # Usage: source .homerecipe
 
-##-----: RECOMMENDED SETUP :-------------------------------------
+##-----: DEFAULT SETUP :-----------------------------------------
 # Handle Bash / Zsh diff
-if [[ ! -z $BASH_SOURCE ]]; then HRPATH="$BASH_SOURCE"; else HRPATH="${(%):-%x}"; fi
-
+if [[ ! -z $BASH_SOURCE ]]; then __HRPATH="$BASH_SOURCE"; else __HRPATH="${(%):-%x}"; fi
 # Assumes the original file structure of Homerecipe/recipes/.homerecipe
-[[ -L $HRPATH ]] || \
+[[ -L $__HRPATH ]] || \
   { echo ".homerecipe is not created as a symlink, skipping alias mapping"; \
-    unset HRPATH; return; }
-HOMERECIPE_DIR=$(dirname $(dirname $(readlink $HRPATH)))
-alias cook="$HOMERECIPE_DIR/cook"
-alias cookdir="cd $HOMERECIPE_DIR"
-unset HOMERECIPE_DIR
-unset HRPATH
+    unset __HRPATH; return; }
+__HRDIR=$(dirname $(dirname $(readlink $__HRPATH)))
+alias cook="$__HRDIR/cook"
+alias cookdir="cd $__HRDIR"
+unset __HRDIR
+unset __HRPATH
+# NOTE: The above variables cannot be used in other files
 ##---------------------------------------------------------------
 
 
