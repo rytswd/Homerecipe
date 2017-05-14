@@ -8,7 +8,7 @@ source "${HOMERECIPE_SCRIPTS}"/util.sh
 # As it includes some key variables such as HOMERECIPE_MODE,
 #   this tries to load whichever .homerecipe available
 if [[ -f "$HOME"/.homerecipe ]]; then
-  source "$HOME"./homerecipe
+  source "$HOME"/.homerecipe
 else
   source "${HOMERECIPE_DIR}"/recipes/.homerecipe
 fi
