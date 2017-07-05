@@ -20,3 +20,5 @@ do
     npm install -g "$i"
   fi
 done
+
+# pip - TODO: work with JSON format
