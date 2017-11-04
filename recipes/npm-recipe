@@ -4,7 +4,11 @@ eslint
 express-generator
 firebase-tools
 gatsby
+generator-bare-react
+generator-chrome-extension
+generator-redux-react
 gulp
+gulp-cli
 learnyounode
 mocha
 n
@@ -13,8 +17,8 @@ nodemon
 npm
 react
 react-native-cli
+redux
 stream-adventure
 thinking-in-react
-vdrt
 yarn
 yo
