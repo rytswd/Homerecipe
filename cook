@@ -46,6 +46,7 @@ case "$1" in
   prep)       COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   backup)     COOKWARE="${HOMERECIPE_SCRIPTS}/make-recipes.sh" ;;
   rmrecipes)  COOKWARE="${HOMERECIPE_SCRIPTS}/remove-recipes.sh" ;;
+  list)       COOKWARE="${HOMERECIPE_SCRIPTS}/list-recipes.sh" ;;
 
   # other
   all)        COOKWARE="${HOMERECIPE_SCRIPTS}/run-all.sh" ;;
@@ -90,6 +91,8 @@ Shell-crafted tool to help manage your \$HOME
     cook restore          -- the same as 'cook all -f'
 
     cook [prep|backup]    -- make recipes, overriding the existing contents
+
+    cook list             -- list all recipes and their contents
 
     cook remove           -- remove default recipes and dotfiles
 
