@@ -20,6 +20,7 @@ react
 react-native-cli
 redux
 stream-adventure
+svgo
 thinking-in-react
 yarn
 yo
