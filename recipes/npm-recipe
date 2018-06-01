@@ -1,10 +1,13 @@
 aurelia
+browser-sync
 browserify
+bs-platform
 create-react-app
 eslint
 express-generator
 firebase-tools
 gatsby
+gatsby-cli
 generator-bare-react
 generator-chrome-extension
 generator-redux-react
@@ -20,6 +23,7 @@ react
 react-native-cli
 redux
 stream-adventure
+surge
 svgo
 thinking-in-react
 yo
