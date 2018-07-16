@@ -19,7 +19,7 @@ alias ngrep='egrep --color=never' # no colour
 alias sha1sum='openssl sha1'
 
 ## Homebrew
-alias sysupdate='brew update && brew upgrade && brew doctor && npm update && npm upgrade -g'
+alias sysupdate='brew update && brew upgrade && brew cleanup && brew doctor && npm update && npm upgrade -g'
 
 
 ## Custom Alias
