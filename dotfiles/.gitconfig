@@ -17,6 +17,7 @@
   ci = commit
   co = checkout
   ls = branch -a
+  lg = log --oneline --decorate --graph
   lga = log --oneline --all --decorate --graph
   rbi = rebase --interactive
   rba = rebase --abort

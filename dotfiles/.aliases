@@ -28,3 +28,16 @@ alias chlw='find . -mtime -1w -type file -exec ls -lh {} \;'
 alias chl2w='find . -mtime -2w -type file -exec ls -lh {} \;'
 # Delete all .DS_Store files recursively
 alias rmds='find . -type f -name "*.DS_Store" -ls -delete'
+alias watch='watch '
+
+## Terraform
+alias tf="terraform"
+
+## Kubernetes
+alias k='kubectl'
+alias kc='kubectl'
+alias kg='kubectl get'
+alias kgp='kubectl get pod'
+alias kgpa='kubectl get pod --all-namespaces'
+alias kgs='kubectl get svc'
+alias kgsa='kubectl get svc --all-namespaces'

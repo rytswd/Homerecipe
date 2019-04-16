@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+export TERM="xterm-256color"
 
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -36,6 +37,9 @@ then
   source ~/.z-s-h-colors
 fi
 
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
 plugins=(
   git
   osx
@@ -45,3 +49,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotbundle
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault

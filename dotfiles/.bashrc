@@ -38,3 +38,5 @@ PROMPT_COMMAND=__prompt_command
 
 # Load other dotfiles
 source ~/.dotbundle
+
+complete -C /usr/local/bin/vault vault
