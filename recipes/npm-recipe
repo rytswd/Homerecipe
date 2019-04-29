@@ -10,7 +10,6 @@ generator-chrome-extension
 generator-redux-react
 mocha
 n
-node
 nodemon
 npm
 react
