@@ -6,13 +6,16 @@ export LESS="-iMNR"
 # Homebrew Cask install dir location
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# Go related
+export GOPATH="$HOME/Coding/go"
+
 ## Node related
 # Enable persistent REPL history for `node`.
-export NODE_REPL_HISTORY=~/.node_history;
-export NODE_REPL_HISTORY_SIZE='32768';
+export NODE_REPL_HISTORY=~/.node_history
+export NODE_REPL_HISTORY_SIZE='32768'
 
 # Use sloppy mode by default
-export NODE_REPL_MODE='sloppy';
+export NODE_REPL_MODE='sloppy'
 
 # nvm related - https://github.com/creationix/nvm
 export NVM_DIR="$HOME/.nvm"

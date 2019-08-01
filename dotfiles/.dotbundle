@@ -12,3 +12,7 @@ if [[ $- =~ "i" ]]; then
 #  [[ -f ~/.private ]] && source ~/.private || echo ".private not found"
   [[ -f ~/.homerecipe ]] && source ~/.homerecipe || echo ".homerecipe not found"
 fi
+
+
+# Finally, set PATH
+export PATH=$PATH:/usr/local/sbin:$(go env GOPATH)/bin

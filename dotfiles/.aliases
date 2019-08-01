@@ -9,6 +9,7 @@ alias la='ls -laFG'
 alias ls='ls -FG'
 alias vi='vim'
 alias rmf='rm -rf'
+alias cdt='cd $(mktemp -d)'
 
 # Grep with colour - GREP_OPTIONS is deprecated
 alias grep='grep --color=auto'
@@ -29,6 +30,7 @@ alias chl2w='find . -mtime -2w -type file -exec ls -lh {} \;'
 # Delete all .DS_Store files recursively
 alias rmds='find . -type f -name "*.DS_Store" -ls -delete'
 alias watch='watch '
+alias calcgo="( find ./ -name '*.go' -print0 | xargs -0 cat ) | wc -l"
 
 ## Terraform
 alias tf="terraform"
