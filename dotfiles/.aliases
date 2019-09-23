@@ -11,6 +11,7 @@ alias vi='vim'
 alias rmf='rm -rf'
 alias cdt='cd $(mktemp -d)'
 alias untar='tar xf'
+alias untgz='tar xzf'
 
 # Grep with colour - GREP_OPTIONS is deprecated
 alias grep='grep --color=auto'
