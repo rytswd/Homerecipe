@@ -5,7 +5,6 @@
 [user]
   name = Ryota
   useConfigOnly = true
-	email = rytswd@gmail.com
 [github]
   user = rytswd
 [color]
@@ -24,6 +23,7 @@
   rba = rebase --abort
   forget = update-index --assume-unchanged
   unforget = update-index --no-assume-unchanged
+  fp = fetch --prune
 [help]
   autocorrect = 1
 [push]
