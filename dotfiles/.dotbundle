@@ -15,4 +15,4 @@ fi
 
 
 # Finally, set PATH
-export PATH=$PATH:/usr/local/sbin:$HOME/.local/bin:$(go env GOPATH)/bin
+export PATH=$PATH:/usr/local/sbin:$HOME/.local/bin:$(go env GOPATH)/bin:$HOME/flutter/bin
