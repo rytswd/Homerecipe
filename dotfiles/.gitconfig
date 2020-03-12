@@ -5,6 +5,7 @@
 [user]
   name = Ryota
   useConfigOnly = true
+	email = rytswd@gmail.com
 [github]
   user = rytswd
 [color]
@@ -25,6 +26,11 @@
   forget = update-index --assume-unchanged
   unforget = update-index --no-assume-unchanged
   fp = fetch --prune
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
+  unhide-all = update-index --really-refresh
+  hidden = !git ls-files -v | grep \"^[a-z]\"
+  ignored = !git status -s --ignored | grep \"^!!\"
 [help]
   autocorrect = 1
 [push]
