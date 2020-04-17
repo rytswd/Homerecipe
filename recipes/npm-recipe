@@ -1,3 +1,4 @@
+@vue
 bs-platform
 create-react-app
 eslint
@@ -8,6 +9,7 @@ gatsby-cli
 generator-bare-react
 generator-chrome-extension
 generator-redux-react
+live-server
 mocha
 n
 nodemon
