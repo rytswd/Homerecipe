@@ -45,16 +45,19 @@ alias kg='kubectl get'
 alias kgaa='kubectl get all --all-namespaces'
 alias kgp='kubectl get pod'
 alias kgpa='kubectl get pod --all-namespaces'
+alias kgpal='kubectl get pod --all-namespaces -l'
 alias kgs='kubectl get svc'
 alias kgsa='kubectl get svc --all-namespaces'
 alias kgd='kubectl get deployment'
 alias kgda='kubectl get deployment --all-namespaces'
 
 ## Istio
-alias iig='kubectl get pod -l app=istio-ingressgateway -n istio-system -o name'
-alias ieg='kubectl get pod -l app=istio-ingressgateway -n istio-system -o name'
-alias istio-ingress-log='kubectl logs $(iig) -c istio-proxy'
-alias istio-egress-log='kubectl logs $(ieg) -c istio-proxy'
+alias iig="kubectl get pod -l app=istio-ingressgateway -n istio-system -o jsonpath='{.items[0].metadata.name}'"
+alias ieg="kubectl get pod -l app=istio-ingressgateway -n istio-system -o jsonpath='{.items[0].metadata.name}'"
+alias istio-ingress-log='kubectl logs $(iig) -n istio-system -c istio-proxy'
+alias istio-egress-log='kubectl logs $(ieg) -n istio-system -c istio-proxy'
+alias iid="kubectl get pod -l app=istiod -n istio-system -o jsonpath='{.items[0].metadata.name}'"
+alias istio-istiod-log='kubectl logs $(iid) -n istio-system '
 
 ## Helm Specific (Tiller related, remove after v3)
 alias cleanhelm='kubectl delete deployment tiller-deploy -n kube-system; kubectl delete svc tiller-deploy -n kube-system'
