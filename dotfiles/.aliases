@@ -33,6 +33,7 @@ alias chl2w='find . -mtime -2w -type file -exec ls -lh {} \;'
 alias rmds='find . -type f -name "*.DS_Store" -ls -delete'
 alias watch='watch '
 alias calcgo="( find ./ -name '*.go' -print0 | xargs -0 cat ) | wc -l"
+alias gbd="git branch --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git branch -d"
 
 ## Terraform
 alias tf="terraform"
