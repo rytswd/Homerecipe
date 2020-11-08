@@ -53,11 +53,11 @@ alias kgd='kubectl get deployment'
 alias kgda='kubectl get deployment --all-namespaces'
 
 ## Istio
-alias iig="kubectl get pod -l app=istio-ingressgateway -n istio-system -o jsonpath='{.items[0].metadata.name}'"
-alias ieg="kubectl get pod -l app=istio-egressgateway -n istio-system -o jsonpath='{.items[0].metadata.name}'"
-alias istio-ingress-log='kubectl logs $(iig) -n istio-system -c istio-proxy'
-alias istio-egress-log='kubectl logs $(ieg) -n istio-system -c istio-proxy'
-alias iid="kubectl get pod -l app=istiod -n istio-system -o jsonpath='{.items[0].metadata.name}'"
-alias istio-istiod-log='kubectl logs $(iid) -n istio-system '
-alias iig-routes="istioctl pc routes $(iig).istio-system -o json"
+alias iig='kubectl get pod -l app=istio-ingressgateway -n istio-system -o jsonpath="{.items[0].metadata.name}"'
+alias ieg='kubectl get pod -l app=istio-egressgateway -n istio-system -o jsonpath="{.items[0].metadata.name}"'
+alias istio-ingress-log='kubectl logs $(kubectl get pod -l app=istio-ingressgateway -n istio-system -o jsonpath="{.items[0].metadata.name}") -n istio-system -c istio-proxy'
+alias istio-egress-log='kubectl logs $(kubectl get pod -l app=istio-egressgateway -n istio-system -o jsonpath="{.items[0].metadata.name}") -n istio-system -c istio-proxy'
+alias iid='kubectl get pod -l app=istiod -n istio-system -o jsonpath="{.items[0].metadata.name}"'
+alias istio-istiod-log='kubectl logs $(kubectl get pod -l app=istiod -n istio-system -o jsonpath="{.items[0].metadata.name}") -n istio-system '
+alias iig-routes='istioctl pc routes $(kubectl get pod -l app=istio-ingressgateway -n istio-system -o jsonpath="{.items[0].metadata.name}").istio-system -o json'
 
