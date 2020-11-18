@@ -15,12 +15,12 @@ function __prompt_command {
   white="\[$(tput setaf 7)\]"
   local d
   d="\[$(tput sgr0)\]"
-  PS1+="$white\u$d $cyan@$d $white\h$d ] \w "
+  PS1+="$white\u$d $cyan@$d $white\H$d ] \w "
 
   # use dirs -0 to replace with tilde
   local current
   current=$(dirs -0)
-  local len=$(( $(tput cols) - ${#USER} - ${#HOSTNAME} - 12 - ${#current}))
+  local len=$(( $(tput cols) - ${#USER} - ${#HOSTNAME} - 18 - ${#current}))
 
   if [ $r != 0 ]; then
       PS1+="$red[ret:$r] "
