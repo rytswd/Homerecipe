@@ -1,4 +1,8 @@
 # Homerecipe
+
+> [!NOTE]
+> This is no longer used, and most of my configurations have moved to Nix based setup instead.
+
 Recipe to cook my `$HOME` :yum:
 
 #### My \$HOME isn't your \$HOME :house:
